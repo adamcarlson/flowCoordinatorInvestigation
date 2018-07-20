@@ -7,17 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-enum FlowCoordinatorData {
-    case signIn
-    case mainTabBar
-    case play(String)
-    case details(String)
-    case search
-}
-
-protocol FlowCoordinator: class {
-    var parent: FlowCoordinator? { get set }
-
-    func navigateUsing(data: FlowCoordinatorData)
+// Probably a better name for this...
+protocol DismissalDelegate: class {
+    func viewControllerDidRequestDismissal(_ viewController: UIViewController)
 }

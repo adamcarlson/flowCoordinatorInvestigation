@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tAS-mU-Y1P">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Playback View Controller-->
+        <scene sceneID="YbI-Jo-ePh">
+            <objects>
+                <viewController id="tAS-mU-Y1P" customClass="PlaybackViewController" customModule="flowCoordinatorInvestigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uSx-QU-GeH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyr-ef-wSf">
+                                <rect key="frame" x="20" y="40" width="335" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGd-8B-Li9">
+                                        <rect key="frame" x="160" y="89.5" width="14" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RGd-8B-Li9" firstAttribute="centerX" secondItem="dyr-ef-wSf" secondAttribute="centerX" id="8BC-WP-OXJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="YIM-db-7AG"/>
+                                    <constraint firstItem="RGd-8B-Li9" firstAttribute="centerY" secondItem="dyr-ef-wSf" secondAttribute="centerY" id="kaL-Zk-DSN"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing: title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExQ-2W-LOM">
+                                <rect key="frame" x="20" y="260" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ExQ-2W-LOM" firstAttribute="leading" secondItem="kvH-oF-KyZ" secondAttribute="leading" constant="20" id="XZe-QZ-84d"/>
+                            <constraint firstItem="dyr-ef-wSf" firstAttribute="top" secondItem="kvH-oF-KyZ" secondAttribute="top" constant="20" id="a3J-Dp-tTg"/>
+                            <constraint firstItem="kvH-oF-KyZ" firstAttribute="trailing" secondItem="dyr-ef-wSf" secondAttribute="trailing" constant="20" id="lAE-09-NWJ"/>
+                            <constraint firstItem="dyr-ef-wSf" firstAttribute="leading" secondItem="kvH-oF-KyZ" secondAttribute="leading" constant="20" id="rts-cI-M5O"/>
+                            <constraint firstItem="ExQ-2W-LOM" firstAttribute="top" secondItem="dyr-ef-wSf" secondAttribute="bottom" constant="20" id="xRB-gb-SMy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kvH-oF-KyZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="idLabel" destination="RGd-8B-Li9" id="Kqr-CI-Fxi"/>
+                        <outlet property="nowPlayingLabel" destination="ExQ-2W-LOM" id="5Xx-5Y-pyB"/>
+                        <outlet property="playbackScreen" destination="dyr-ef-wSf" id="ryv-ak-vCr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncL-FO-CrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="147"/>
+        </scene>
+    </scenes>
+</document>

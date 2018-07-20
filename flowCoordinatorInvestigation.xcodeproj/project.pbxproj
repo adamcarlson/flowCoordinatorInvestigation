@@ -13,17 +13,15 @@
 		BDC23B9B210036B90035E6C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC23B9A210036B90035E6C6 /* Assets.xcassets */; };
 		BDC23B9E210036B90035E6C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC23B9C210036B90035E6C6 /* LaunchScreen.storyboard */; };
 		BDC23BA72100376D0035E6C6 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BA62100376D0035E6C6 /* FlowCoordinator.swift */; };
-		BDC23BAA210038670035E6C6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BA9210038670035E6C6 /* AppCoordinator.swift */; };
-		BDC23BAD21003A790035E6C6 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BAC21003A790035E6C6 /* AppPresenter.swift */; };
 		BDC23BB121003CF80035E6C6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BB021003CF80035E6C6 /* UIView+Extensions.swift */; };
-		BDC23BB3210044290035E6C6 /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BB2210044290035E6C6 /* SignInFlowCoordinator.swift */; };
-		BDC23BB5210045D70035E6C6 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BB4210045D70035E6C6 /* SignInPresenter.swift */; };
-		BDC23BB8210047A00035E6C6 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BB7210047A00035E6C6 /* MainTabBarCoordinator.swift */; };
-		BDC23BBA210047B30035E6C6 /* PlaybackCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BB9210047B30035E6C6 /* PlaybackCoordinator.swift */; };
-		BDC23BBC210047E20035E6C6 /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BBB210047E20035E6C6 /* MainTabBarPresenter.swift */; };
-		BDC23BBE2100480C0035E6C6 /* PlaybackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BBD2100480C0035E6C6 /* PlaybackPresenter.swift */; };
-		BDC23BC021004BEC0035E6C6 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BBF21004BEC0035E6C6 /* SearchCoordinator.swift */; };
-		BDC23BC221004C000035E6C6 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BC121004C000035E6C6 /* SearchPresenter.swift */; };
+		BDC23BC4210172F80035E6C6 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BC3210172F80035E6C6 /* DetailsViewController.swift */; };
+		BDC23BC7210173B90035E6C6 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BC6210173B90035E6C6 /* Entity.swift */; };
+		BDC23BC92101742E0035E6C6 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC23BC82101742E0035E6C6 /* Details.storyboard */; };
+		BDC23BCD2101745F0035E6C6 /* Instantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BCC2101745F0035E6C6 /* Instantiable.swift */; };
+		BDC23BCF21017AB40035E6C6 /* PlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23BCE21017AB40035E6C6 /* PlaybackViewController.swift */; };
+		BDC23BD121017C040035E6C6 /* Playback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC23BD021017C040035E6C6 /* Playback.storyboard */; };
+		BDCDDE772101AA23004E3147 /* DetailsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDDE762101AA23004E3147 /* DetailsFlowCoordinator.swift */; };
+		BDCDDE7B2101AF52004E3147 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDDE7A2101AF52004E3147 /* OptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,17 +33,15 @@
 		BDC23B9D210036B90035E6C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDC23B9F210036B90035E6C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDC23BA62100376D0035E6C6 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
-		BDC23BA9210038670035E6C6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		BDC23BAC21003A790035E6C6 /* AppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
 		BDC23BB021003CF80035E6C6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		BDC23BB2210044290035E6C6 /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
-		BDC23BB4210045D70035E6C6 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
-		BDC23BB7210047A00035E6C6 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
-		BDC23BB9210047B30035E6C6 /* PlaybackCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackCoordinator.swift; sourceTree = "<group>"; };
-		BDC23BBB210047E20035E6C6 /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
-		BDC23BBD2100480C0035E6C6 /* PlaybackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackPresenter.swift; sourceTree = "<group>"; };
-		BDC23BBF21004BEC0035E6C6 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
-		BDC23BC121004C000035E6C6 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		BDC23BC3210172F80035E6C6 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		BDC23BC6210173B90035E6C6 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		BDC23BC82101742E0035E6C6 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		BDC23BCC2101745F0035E6C6 /* Instantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instantiable.swift; sourceTree = "<group>"; };
+		BDC23BCE21017AB40035E6C6 /* PlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackViewController.swift; sourceTree = "<group>"; };
+		BDC23BD021017C040035E6C6 /* Playback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playback.storyboard; sourceTree = "<group>"; };
+		BDCDDE762101AA23004E3147 /* DetailsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFlowCoordinator.swift; sourceTree = "<group>"; };
+		BDCDDE7A2101AF52004E3147 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +78,7 @@
 				BDC23BA5210037490035E6C6 /* flowCoordinators */,
 				BDC23BAB21003A630035E6C6 /* Presenters */,
 				BDC23BB6210047630035E6C6 /* ViewControllers */,
+				BDC23BC5210173AD0035E6C6 /* Models */,
 				BDC23BA8210037820035E6C6 /* Util */,
 				BDC23B95210036B80035E6C6 /* ViewController.swift */,
 				BDC23B97210036B80035E6C6 /* Main.storyboard */,
@@ -95,11 +92,7 @@
 		BDC23BA5210037490035E6C6 /* flowCoordinators */ = {
 			isa = PBXGroup;
 			children = (
-				BDC23BA9210038670035E6C6 /* AppCoordinator.swift */,
-				BDC23BB2210044290035E6C6 /* SignInFlowCoordinator.swift */,
-				BDC23BB7210047A00035E6C6 /* MainTabBarCoordinator.swift */,
-				BDC23BB9210047B30035E6C6 /* PlaybackCoordinator.swift */,
-				BDC23BBF21004BEC0035E6C6 /* SearchCoordinator.swift */,
+				BDCDDE762101AA23004E3147 /* DetailsFlowCoordinator.swift */,
 			);
 			path = flowCoordinators;
 			sourceTree = "<group>";
@@ -109,6 +102,7 @@
 			children = (
 				BDC23BA62100376D0035E6C6 /* FlowCoordinator.swift */,
 				BDC23BB021003CF80035E6C6 /* UIView+Extensions.swift */,
+				BDC23BCC2101745F0035E6C6 /* Instantiable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -116,11 +110,6 @@
 		BDC23BAB21003A630035E6C6 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				BDC23BAC21003A790035E6C6 /* AppPresenter.swift */,
-				BDC23BB4210045D70035E6C6 /* SignInPresenter.swift */,
-				BDC23BBB210047E20035E6C6 /* MainTabBarPresenter.swift */,
-				BDC23BBD2100480C0035E6C6 /* PlaybackPresenter.swift */,
-				BDC23BC121004C000035E6C6 /* SearchPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -128,8 +117,21 @@
 		BDC23BB6210047630035E6C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BDC23BC3210172F80035E6C6 /* DetailsViewController.swift */,
+				BDC23BC82101742E0035E6C6 /* Details.storyboard */,
+				BDC23BCE21017AB40035E6C6 /* PlaybackViewController.swift */,
+				BDC23BD021017C040035E6C6 /* Playback.storyboard */,
+				BDCDDE7A2101AF52004E3147 /* OptionsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BDC23BC5210173AD0035E6C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BDC23BC6210173B90035E6C6 /* Entity.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +195,8 @@
 				BDC23B9E210036B90035E6C6 /* LaunchScreen.storyboard in Resources */,
 				BDC23B9B210036B90035E6C6 /* Assets.xcassets in Resources */,
 				BDC23B99210036B80035E6C6 /* Main.storyboard in Resources */,
+				BDC23BC92101742E0035E6C6 /* Details.storyboard in Resources */,
+				BDC23BD121017C040035E6C6 /* Playback.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,20 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDC23BB5210045D70035E6C6 /* SignInPresenter.swift in Sources */,
-				BDC23BC021004BEC0035E6C6 /* SearchCoordinator.swift in Sources */,
-				BDC23BBE2100480C0035E6C6 /* PlaybackPresenter.swift in Sources */,
-				BDC23BBA210047B30035E6C6 /* PlaybackCoordinator.swift in Sources */,
+				BDCDDE7B2101AF52004E3147 /* OptionsViewController.swift in Sources */,
+				BDC23BC7210173B90035E6C6 /* Entity.swift in Sources */,
 				BDC23BB121003CF80035E6C6 /* UIView+Extensions.swift in Sources */,
-				BDC23BAA210038670035E6C6 /* AppCoordinator.swift in Sources */,
-				BDC23BC221004C000035E6C6 /* SearchPresenter.swift in Sources */,
-				BDC23BB8210047A00035E6C6 /* MainTabBarCoordinator.swift in Sources */,
-				BDC23BBC210047E20035E6C6 /* MainTabBarPresenter.swift in Sources */,
-				BDC23BAD21003A790035E6C6 /* AppPresenter.swift in Sources */,
+				BDC23BCD2101745F0035E6C6 /* Instantiable.swift in Sources */,
+				BDC23BCF21017AB40035E6C6 /* PlaybackViewController.swift in Sources */,
 				BDC23B96210036B80035E6C6 /* ViewController.swift in Sources */,
+				BDCDDE772101AA23004E3147 /* DetailsFlowCoordinator.swift in Sources */,
 				BDC23B94210036B80035E6C6 /* AppDelegate.swift in Sources */,
-				BDC23BB3210044290035E6C6 /* SignInFlowCoordinator.swift in Sources */,
 				BDC23BA72100376D0035E6C6 /* FlowCoordinator.swift in Sources */,
+				BDC23BC4210172F80035E6C6 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
