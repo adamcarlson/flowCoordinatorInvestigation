@@ -21,23 +21,19 @@ class DetailsFlowCoordinator {
 
     func initialize() {
         // Should the flowCoordinator keep a reference to the viewModel?
-        let detailsViewModel = DetailsViewModel()
+        let detailsViewModel = DetailsViewModel(model: nil)
         presenter.viewModel = detailsViewModel
         presenter.delegate = self
 
-        // Simulate network call
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            detailsViewModel.model = Entity(name: "Test Details", description: "Test Description", id: UUID(), color: .green)
-        }
+        detailsViewModel.simulateNetworkCallUsing(entity: Entity(name: "Lord of the Rings", description: "Hobbits and stuff", id: UUID(), color: .green))
     }
 }
 
 extension DetailsFlowCoordinator: DetailsViewControllerDelegate {
     func optionsSelected(for entity: Entity) {
-        let optionsViewController = OptionsViewController()
+        let optionsViewController = OptionsViewController.instantiate()
         optionsViewController.delegate = self
-        optionsViewController.modalPresentationStyle = .custom
-        optionsViewController.transitioningDelegate = optionsViewController
+        optionsViewController.viewModel = OptionsViewModel(model: entity)
         presenter.present(optionsViewController , animated: true, completion: nil)
     }
 }

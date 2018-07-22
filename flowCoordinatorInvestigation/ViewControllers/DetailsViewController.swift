@@ -10,17 +10,35 @@ import Foundation
 import UIKit
 
 class DetailsViewModel {
-    var model: Entity? = nil {
+    private(set) var model: Entity? {
         didSet {
-            if let model = model {
-                bind?(model)
-            }
+            bind?(model)
         }
     }
 
-    var bind: ((_ model: Entity) -> Void)? = nil
+    var title: String? {
+        return model?.name
+    }
 
-    init() { }
+    var description: String? {
+        return model?.description
+    }
+
+    var backgroundColor: UIColor? {
+        return model?.color
+    }
+
+    var bind: ((_ model: Entity?) -> Void)? = nil
+
+    init(model: Entity?) {
+        self.model = model
+    }
+
+    func simulateNetworkCallUsing(entity: Entity) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.model = entity
+        }
+    }
 }
 
 protocol DetailsViewControllerDelegate: class {
@@ -31,6 +49,7 @@ class DetailsViewController: UIViewController, Instantiable {
 
     @IBOutlet var pageTitle: UILabel!
     @IBOutlet var subtitle: UILabel!
+    @IBOutlet var showOptionsButton: UIButton!
     
     var viewModel: DetailsViewModel?
     weak var delegate: DetailsViewControllerDelegate?
@@ -38,10 +57,13 @@ class DetailsViewController: UIViewController, Instantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        showOptionsButton.isHidden = true
+
         viewModel?.bind = { [weak self] model in
-            self?.pageTitle.text = model.name
-            self?.subtitle.text = model.description
-            self?.view.backgroundColor = model.color
+            self?.showOptionsButton.isHidden = model == nil
+            self?.pageTitle.text = self?.viewModel?.title
+            self?.subtitle.text = self?.viewModel?.description
+            self?.view.backgroundColor = self?.viewModel?.backgroundColor
         }
     }
 

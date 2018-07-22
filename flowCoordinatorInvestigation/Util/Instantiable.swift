@@ -22,6 +22,7 @@ extension Instantiable where Self: UIViewController {
 enum ViewControllers: String {
     case details = "DetailsViewController"
     case player = "PlayerViewController"
+    case options = "OptionsViewController"
 
     var storyboard: UIStoryboard {
         var name = self.rawValue

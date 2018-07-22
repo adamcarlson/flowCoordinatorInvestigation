@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1F2F7121053F7A00C026C8 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1F2F7021053F7A00C026C8 /* Options.storyboard */; };
 		BDC23B94210036B80035E6C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23B93210036B80035E6C6 /* AppDelegate.swift */; };
 		BDC23B96210036B80035E6C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23B95210036B80035E6C6 /* ViewController.swift */; };
 		BDC23B99210036B80035E6C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC23B97210036B80035E6C6 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD1F2F7021053F7A00C026C8 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
 		BDC23B90210036B80035E6C6 /* flowCoordinatorInvestigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flowCoordinatorInvestigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC23B93210036B80035E6C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDC23B95210036B80035E6C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				BDC23BCE21017AB40035E6C6 /* PlaybackViewController.swift */,
 				BDC23BD021017C040035E6C6 /* Playback.storyboard */,
 				BDCDDE7A2101AF52004E3147 /* OptionsViewController.swift */,
+				BD1F2F7021053F7A00C026C8 /* Options.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDC23B9E210036B90035E6C6 /* LaunchScreen.storyboard in Resources */,
+				BD1F2F7121053F7A00C026C8 /* Options.storyboard in Resources */,
 				BDC23B9B210036B90035E6C6 /* Assets.xcassets in Resources */,
 				BDC23B99210036B80035E6C6 /* Main.storyboard in Resources */,
 				BDC23BC92101742E0035E6C6 /* Details.storyboard in Resources */,

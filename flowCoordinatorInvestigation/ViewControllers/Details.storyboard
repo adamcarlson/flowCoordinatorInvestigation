@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObR-G6-W0g">
-                                <rect key="frame" x="48" y="68" width="61" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObR-G6-W0g">
+                                <rect key="frame" x="48" y="68" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdo-ZL-XSI">
-                                <rect key="frame" x="48" y="112" width="59" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdo-ZL-XSI">
+                                <rect key="frame" x="48" y="76" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIi-EK-8pF">
-                                <rect key="frame" x="139" y="236" width="96" height="30"/>
+                                <rect key="frame" x="139" y="179" width="96" height="30"/>
                                 <state key="normal" title="Show Options"/>
                                 <connections>
                                     <action selector="showDetails:" destination="IgK-hC-Gcy" eventType="primaryActionTriggered" id="mVg-9V-Z8i"/>
@@ -51,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="pageTitle" destination="ObR-G6-W0g" id="Ssf-16-E7K"/>
+                        <outlet property="showOptionsButton" destination="zIi-EK-8pF" id="dPY-Wz-qYW"/>
                         <outlet property="subtitle" destination="Jdo-ZL-XSI" id="Rck-qd-Ffw"/>
                     </connections>
                 </viewController>
