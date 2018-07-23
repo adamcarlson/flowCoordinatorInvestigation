@@ -65,6 +65,8 @@ class DetailsViewController: UIViewController, Instantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+
+        title = "Details"
     }
 
     private func updateView() {

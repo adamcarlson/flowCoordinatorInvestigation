@@ -12,13 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appCoordinator: HomeFlowCoordinator?
+    var appCoordinator: MainTabBarFlowCoordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let presenter = UINavigationController()
-        appCoordinator = HomeFlowCoordinator(presenter: presenter)
+        let presenter = UITabBarController()
+        appCoordinator = MainTabBarFlowCoordinator(presenter: presenter)
         appCoordinator?.initialize()
 
         window = UIWindow(frame: UIScreen.main.bounds)

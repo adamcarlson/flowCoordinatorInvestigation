@@ -13,6 +13,7 @@
 		BD1F2F79210560CF00C026C8 /* CoverStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F2F77210560CF00C026C8 /* CoverStoryTableViewCell.swift */; };
 		BD1F2F7A210560CF00C026C8 /* CoverStoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1F2F78210560CF00C026C8 /* CoverStoryTableViewCell.xib */; };
 		BD1F2F7C21057A5400C026C8 /* HomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F2F7B21057A5400C026C8 /* HomeFlowCoordinator.swift */; };
+		BD1F2F8021058C5C00C026C8 /* MainTabBarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F2F7F21058C5C00C026C8 /* MainTabBarFlowCoordinator.swift */; };
 		BDC23B94210036B80035E6C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23B93210036B80035E6C6 /* AppDelegate.swift */; };
 		BDC23B96210036B80035E6C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23B95210036B80035E6C6 /* ViewController.swift */; };
 		BDC23B99210036B80035E6C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC23B97210036B80035E6C6 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		BD1F2F77210560CF00C026C8 /* CoverStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverStoryTableViewCell.swift; sourceTree = "<group>"; };
 		BD1F2F78210560CF00C026C8 /* CoverStoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverStoryTableViewCell.xib; sourceTree = "<group>"; };
 		BD1F2F7B21057A5400C026C8 /* HomeFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinator.swift; sourceTree = "<group>"; };
+		BD1F2F7F21058C5C00C026C8 /* MainTabBarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFlowCoordinator.swift; sourceTree = "<group>"; };
 		BDC23B90210036B80035E6C6 /* flowCoordinatorInvestigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flowCoordinatorInvestigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC23B93210036B80035E6C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDC23B95210036B80035E6C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				BDCDDE762101AA23004E3147 /* DetailsFlowCoordinator.swift */,
 				BD1F2F7B21057A5400C026C8 /* HomeFlowCoordinator.swift */,
+				BD1F2F7F21058C5C00C026C8 /* MainTabBarFlowCoordinator.swift */,
 			);
 			path = flowCoordinators;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				BD1F2F7C21057A5400C026C8 /* HomeFlowCoordinator.swift in Sources */,
 				BDC23BA72100376D0035E6C6 /* FlowCoordinator.swift in Sources */,
 				BDC23BC4210172F80035E6C6 /* DetailsViewController.swift in Sources */,
+				BD1F2F8021058C5C00C026C8 /* MainTabBarFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

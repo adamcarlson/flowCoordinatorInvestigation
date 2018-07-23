@@ -60,6 +60,8 @@ class CoverStoriesViewController: UIViewController, Instantiable {
         tableView.delegate = self
         tableView.dataSource = self
 
+        title = "Cover Stories"
+
         if viewModel?.entities.count ?? 0 == 0 {
             tableView.isHidden = true
             activityIndicatorView.startAnimating()
