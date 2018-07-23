@@ -43,6 +43,7 @@ class DetailsViewModel {
 
 protocol DetailsViewControllerDelegate: class {
     func optionsSelected(for entity: Entity)
+    func detailsViewControllerDidGetRemoved(_ viewController: DetailsViewController)
 }
 
 class DetailsViewController: UIViewController, Instantiable {
@@ -50,20 +51,33 @@ class DetailsViewController: UIViewController, Instantiable {
     @IBOutlet var pageTitle: UILabel!
     @IBOutlet var subtitle: UILabel!
     @IBOutlet var showOptionsButton: UIButton!
-    
-    var viewModel: DetailsViewModel?
+
     weak var delegate: DetailsViewControllerDelegate?
+
+    var viewModel: DetailsViewModel? {
+        didSet {
+            viewModel?.bind = { [weak self] _ in
+                self?.updateView()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
+    }
 
-        showOptionsButton.isHidden = true
+    private func updateView() {
+        showOptionsButton.isHidden = viewModel?.model == nil
+        pageTitle.text = viewModel?.title
+        subtitle.text = viewModel?.description
+        view.backgroundColor = viewModel?.backgroundColor
+    }
 
-        viewModel?.bind = { [weak self] model in
-            self?.showOptionsButton.isHidden = model == nil
-            self?.pageTitle.text = self?.viewModel?.title
-            self?.subtitle.text = self?.viewModel?.description
-            self?.view.backgroundColor = self?.viewModel?.backgroundColor
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if parent == nil {
+            delegate?.detailsViewControllerDidGetRemoved(self)
         }
     }
 

@@ -23,6 +23,7 @@ enum ViewControllers: String {
     case details = "DetailsViewController"
     case player = "PlayerViewController"
     case options = "OptionsViewController"
+    case coverStories = "CoverStoriesViewController"
 
     var storyboard: UIStoryboard {
         var name = self.rawValue

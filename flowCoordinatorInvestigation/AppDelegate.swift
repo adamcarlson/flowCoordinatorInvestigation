@@ -12,18 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appCoordinator: DetailsFlowCoordinator?
+    var appCoordinator: HomeFlowCoordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let presenter = DetailsViewController.instantiate()
-        window?.rootViewController = presenter
-
-        appCoordinator = DetailsFlowCoordinator(presenter: presenter)
+        let presenter = UINavigationController()
+        appCoordinator = HomeFlowCoordinator(presenter: presenter)
         appCoordinator?.initialize()
 
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = presenter
         window?.makeKeyAndVisible()
 
         return true

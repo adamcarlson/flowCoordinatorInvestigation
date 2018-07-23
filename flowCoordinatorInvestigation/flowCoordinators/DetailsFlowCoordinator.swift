@@ -9,23 +9,25 @@
 import Foundation
 import UIKit
 
+protocol DetailsFlowCoordinatorDelegate: class {
+    func detailsDidGetRemoved(flowCoordinator: DetailsFlowCoordinator)
+}
+
 class DetailsFlowCoordinator {
 
     let presenter: DetailsViewController
 
-    var delegate: DismissalDelegate?
+    weak var delegate: DetailsFlowCoordinatorDelegate?
 
     init(presenter: DetailsViewController) {
         self.presenter = presenter
     }
 
-    func initialize() {
+    func initialize(with entity: Entity) {
         // Should the flowCoordinator keep a reference to the viewModel?
-        let detailsViewModel = DetailsViewModel(model: nil)
+        let detailsViewModel = DetailsViewModel(model: entity)
         presenter.viewModel = detailsViewModel
         presenter.delegate = self
-
-        detailsViewModel.simulateNetworkCallUsing(entity: Entity(name: "Lord of the Rings", description: "Hobbits and stuff", id: UUID(), color: .green))
     }
 }
 
@@ -36,16 +38,16 @@ extension DetailsFlowCoordinator: DetailsViewControllerDelegate {
         optionsViewController.viewModel = OptionsViewModel(model: entity)
         presenter.present(optionsViewController , animated: true, completion: nil)
     }
+
+    func detailsViewControllerDidGetRemoved(_ viewController: DetailsViewController) {
+        delegate?.detailsDidGetRemoved(flowCoordinator: self)
+    }
 }
 
 extension DetailsFlowCoordinator: DismissalDelegate {
     func viewControllerDidRequestDismissal(_ viewController: UIViewController) {
         if viewController is OptionsViewController {
             presenter.dismiss(animated: true, completion: nil)
-        }
-
-        if viewController is DetailsViewController {
-            delegate?.viewControllerDidRequestDismissal(viewController)
         }
     }
 }

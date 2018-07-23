@@ -18,20 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObR-G6-W0g">
-                                <rect key="frame" x="48" y="68" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ObR-G6-W0g">
+                                <rect key="frame" x="24" y="112" width="327" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdo-ZL-XSI">
-                                <rect key="frame" x="48" y="76" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdo-ZL-XSI">
+                                <rect key="frame" x="24" y="120" width="327" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIi-EK-8pF">
-                                <rect key="frame" x="139" y="179" width="96" height="30"/>
+                                <rect key="frame" x="24" y="168" width="139" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <state key="normal" title="Show Options"/>
                                 <connections>
                                     <action selector="showDetails:" destination="IgK-hC-Gcy" eventType="primaryActionTriggered" id="mVg-9V-Z8i"/>
@@ -40,15 +43,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zIi-EK-8pF" firstAttribute="centerX" secondItem="IXZ-eb-W9H" secondAttribute="centerX" id="4Ti-DA-4Nq"/>
-                            <constraint firstItem="ObR-G6-W0g" firstAttribute="leading" secondItem="IXZ-eb-W9H" secondAttribute="leading" constant="48" id="8ww-Dg-2n6"/>
-                            <constraint firstItem="zIi-EK-8pF" firstAttribute="top" secondItem="Jdo-ZL-XSI" secondAttribute="bottom" constant="103" id="9vW-mp-xyk"/>
+                            <constraint firstItem="Jdo-ZL-XSI" firstAttribute="trailing" secondItem="ObR-G6-W0g" secondAttribute="trailing" id="7If-T4-7yM"/>
+                            <constraint firstItem="ObR-G6-W0g" firstAttribute="leading" secondItem="IXZ-eb-W9H" secondAttribute="leading" constant="24" id="8ww-Dg-2n6"/>
+                            <constraint firstItem="zIi-EK-8pF" firstAttribute="top" secondItem="Jdo-ZL-XSI" secondAttribute="bottom" constant="48" id="9vW-mp-xyk"/>
+                            <constraint firstItem="zIi-EK-8pF" firstAttribute="leading" secondItem="Jdo-ZL-XSI" secondAttribute="leading" id="Goe-FI-lwR"/>
                             <constraint firstItem="ObR-G6-W0g" firstAttribute="top" secondItem="IXZ-eb-W9H" secondAttribute="top" constant="48" id="Of2-qc-18l"/>
                             <constraint firstItem="Jdo-ZL-XSI" firstAttribute="top" secondItem="ObR-G6-W0g" secondAttribute="bottom" constant="8" id="Wrk-ZS-zXG"/>
                             <constraint firstItem="Jdo-ZL-XSI" firstAttribute="leading" secondItem="ObR-G6-W0g" secondAttribute="leading" id="b9Y-sW-Vtt"/>
+                            <constraint firstItem="IXZ-eb-W9H" firstAttribute="trailing" secondItem="ObR-G6-W0g" secondAttribute="trailing" constant="24" id="j4J-pU-G1W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IXZ-eb-W9H"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="pageTitle" destination="ObR-G6-W0g" id="Ssf-16-E7K"/>
                         <outlet property="showOptionsButton" destination="zIi-EK-8pF" id="dPY-Wz-qYW"/>

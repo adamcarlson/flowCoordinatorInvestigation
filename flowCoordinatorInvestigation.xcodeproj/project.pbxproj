@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		BD1F2F7121053F7A00C026C8 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1F2F7021053F7A00C026C8 /* Options.storyboard */; };
+		BD1F2F7321055EF000C026C8 /* CoverStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F2F7221055EF000C026C8 /* CoverStoriesViewController.swift */; };
+		BD1F2F7521055F9100C026C8 /* CoverStories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1F2F7421055F9100C026C8 /* CoverStories.storyboard */; };
+		BD1F2F79210560CF00C026C8 /* CoverStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F2F77210560CF00C026C8 /* CoverStoryTableViewCell.swift */; };
+		BD1F2F7A210560CF00C026C8 /* CoverStoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1F2F78210560CF00C026C8 /* CoverStoryTableViewCell.xib */; };
+		BD1F2F7C21057A5400C026C8 /* HomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F2F7B21057A5400C026C8 /* HomeFlowCoordinator.swift */; };
 		BDC23B94210036B80035E6C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23B93210036B80035E6C6 /* AppDelegate.swift */; };
 		BDC23B96210036B80035E6C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC23B95210036B80035E6C6 /* ViewController.swift */; };
 		BDC23B99210036B80035E6C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC23B97210036B80035E6C6 /* Main.storyboard */; };
@@ -27,6 +32,11 @@
 
 /* Begin PBXFileReference section */
 		BD1F2F7021053F7A00C026C8 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
+		BD1F2F7221055EF000C026C8 /* CoverStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverStoriesViewController.swift; sourceTree = "<group>"; };
+		BD1F2F7421055F9100C026C8 /* CoverStories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverStories.storyboard; sourceTree = "<group>"; };
+		BD1F2F77210560CF00C026C8 /* CoverStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverStoryTableViewCell.swift; sourceTree = "<group>"; };
+		BD1F2F78210560CF00C026C8 /* CoverStoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverStoryTableViewCell.xib; sourceTree = "<group>"; };
+		BD1F2F7B21057A5400C026C8 /* HomeFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinator.swift; sourceTree = "<group>"; };
 		BDC23B90210036B80035E6C6 /* flowCoordinatorInvestigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flowCoordinatorInvestigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC23B93210036B80035E6C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDC23B95210036B80035E6C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD1F2F76210560A100C026C8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD1F2F77210560CF00C026C8 /* CoverStoryTableViewCell.swift */,
+				BD1F2F78210560CF00C026C8 /* CoverStoryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BDC23B87210036B80035E6C6 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 				BDC23BA5210037490035E6C6 /* flowCoordinators */,
 				BDC23BAB21003A630035E6C6 /* Presenters */,
 				BDC23BB6210047630035E6C6 /* ViewControllers */,
+				BD1F2F76210560A100C026C8 /* Cells */,
 				BDC23BC5210173AD0035E6C6 /* Models */,
 				BDC23BA8210037820035E6C6 /* Util */,
 				BDC23B95210036B80035E6C6 /* ViewController.swift */,
@@ -95,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCDDE762101AA23004E3147 /* DetailsFlowCoordinator.swift */,
+				BD1F2F7B21057A5400C026C8 /* HomeFlowCoordinator.swift */,
 			);
 			path = flowCoordinators;
 			sourceTree = "<group>";
@@ -125,6 +146,8 @@
 				BDC23BD021017C040035E6C6 /* Playback.storyboard */,
 				BDCDDE7A2101AF52004E3147 /* OptionsViewController.swift */,
 				BD1F2F7021053F7A00C026C8 /* Options.storyboard */,
+				BD1F2F7221055EF000C026C8 /* CoverStoriesViewController.swift */,
+				BD1F2F7421055F9100C026C8 /* CoverStories.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,7 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1F2F7A210560CF00C026C8 /* CoverStoryTableViewCell.xib in Resources */,
 				BDC23B9E210036B90035E6C6 /* LaunchScreen.storyboard in Resources */,
+				BD1F2F7521055F9100C026C8 /* CoverStories.storyboard in Resources */,
 				BD1F2F7121053F7A00C026C8 /* Options.storyboard in Resources */,
 				BDC23B9B210036B90035E6C6 /* Assets.xcassets in Resources */,
 				BDC23B99210036B80035E6C6 /* Main.storyboard in Resources */,
@@ -211,6 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1F2F79210560CF00C026C8 /* CoverStoryTableViewCell.swift in Sources */,
+				BD1F2F7321055EF000C026C8 /* CoverStoriesViewController.swift in Sources */,
 				BDCDDE7B2101AF52004E3147 /* OptionsViewController.swift in Sources */,
 				BDC23BC7210173B90035E6C6 /* Entity.swift in Sources */,
 				BDC23BB121003CF80035E6C6 /* UIView+Extensions.swift in Sources */,
@@ -219,6 +246,7 @@
 				BDC23B96210036B80035E6C6 /* ViewController.swift in Sources */,
 				BDCDDE772101AA23004E3147 /* DetailsFlowCoordinator.swift in Sources */,
 				BDC23B94210036B80035E6C6 /* AppDelegate.swift in Sources */,
+				BD1F2F7C21057A5400C026C8 /* HomeFlowCoordinator.swift in Sources */,
 				BDC23BA72100376D0035E6C6 /* FlowCoordinator.swift in Sources */,
 				BDC23BC4210172F80035E6C6 /* DetailsViewController.swift in Sources */,
 			);
