@@ -15,11 +15,21 @@ class CoverStoryTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
 
+    weak var delegate: PlaybackRequestDelegate?
+
     var model: Entity? {
         didSet {
             titleLabel.text = model?.name
             descriptionLabel.text = model?.description
             backgroundColor = model?.color
         }
+    }
+
+    @IBAction func playCoverStory(_ sender: UIButton) {
+        guard let model = model else {
+            return
+        }
+        
+        delegate?.playbackRequested(for: model)
     }
 }

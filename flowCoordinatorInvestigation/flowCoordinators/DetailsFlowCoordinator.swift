@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol DetailsFlowCoordinatorDelegate: class {
+protocol DetailsFlowCoordinatorDelegate: PlaybackRequestDelegate {
     func detailsDidGetRemoved(flowCoordinator: DetailsFlowCoordinator)
 }
 
@@ -49,5 +49,11 @@ extension DetailsFlowCoordinator: DismissalDelegate {
         if viewController is OptionsViewController {
             presenter.dismiss(animated: true, completion: nil)
         }
+    }
+}
+
+extension DetailsFlowCoordinator: PlaybackRequestDelegate {
+    func playbackRequested(for entity: Entity) {
+        delegate?.playbackRequested(for: entity)
     }
 }

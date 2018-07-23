@@ -21,7 +21,7 @@ extension Instantiable where Self: UIViewController {
 
 enum ViewControllers: String {
     case details = "DetailsViewController"
-    case player = "PlayerViewController"
+    case player = "PlaybackViewController"
     case options = "OptionsViewController"
     case coverStories = "CoverStoriesViewController"
 

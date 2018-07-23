@@ -41,7 +41,7 @@ class DetailsViewModel {
     }
 }
 
-protocol DetailsViewControllerDelegate: class {
+protocol DetailsViewControllerDelegate: PlaybackRequestDelegate {
     func optionsSelected(for entity: Entity)
     func detailsViewControllerDidGetRemoved(_ viewController: DetailsViewController)
 }
@@ -91,4 +91,11 @@ class DetailsViewController: UIViewController, Instantiable {
         delegate?.optionsSelected(for: model)
     }
 
+    @IBAction func startPlayback(_ sender: UIButton) {
+        guard let model = viewModel?.model else {
+            return
+        }
+
+        delegate?.playbackRequested(for: model)
+    }
 }

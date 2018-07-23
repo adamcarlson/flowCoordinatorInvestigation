@@ -40,13 +40,28 @@
                                     <action selector="showDetails:" destination="IgK-hC-Gcy" eventType="primaryActionTriggered" id="mVg-9V-Z8i"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-lt-qdL">
+                                <rect key="frame" x="24" y="216" width="139" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startPlayback:" destination="IgK-hC-Gcy" eventType="primaryActionTriggered" id="sTM-Nm-yO5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZfZ-lt-qdL" firstAttribute="top" secondItem="zIi-EK-8pF" secondAttribute="bottom" constant="8" id="36l-ZB-cCW"/>
                             <constraint firstItem="Jdo-ZL-XSI" firstAttribute="trailing" secondItem="ObR-G6-W0g" secondAttribute="trailing" id="7If-T4-7yM"/>
+                            <constraint firstItem="ZfZ-lt-qdL" firstAttribute="leading" secondItem="zIi-EK-8pF" secondAttribute="leading" id="7na-hz-HrT"/>
                             <constraint firstItem="ObR-G6-W0g" firstAttribute="leading" secondItem="IXZ-eb-W9H" secondAttribute="leading" constant="24" id="8ww-Dg-2n6"/>
                             <constraint firstItem="zIi-EK-8pF" firstAttribute="top" secondItem="Jdo-ZL-XSI" secondAttribute="bottom" constant="48" id="9vW-mp-xyk"/>
                             <constraint firstItem="zIi-EK-8pF" firstAttribute="leading" secondItem="Jdo-ZL-XSI" secondAttribute="leading" id="Goe-FI-lwR"/>
+                            <constraint firstItem="ZfZ-lt-qdL" firstAttribute="trailing" secondItem="zIi-EK-8pF" secondAttribute="trailing" id="NZW-e8-Twc"/>
                             <constraint firstItem="ObR-G6-W0g" firstAttribute="top" secondItem="IXZ-eb-W9H" secondAttribute="top" constant="48" id="Of2-qc-18l"/>
                             <constraint firstItem="Jdo-ZL-XSI" firstAttribute="top" secondItem="ObR-G6-W0g" secondAttribute="bottom" constant="8" id="Wrk-ZS-zXG"/>
                             <constraint firstItem="Jdo-ZL-XSI" firstAttribute="leading" secondItem="ObR-G6-W0g" secondAttribute="leading" id="b9Y-sW-Vtt"/>

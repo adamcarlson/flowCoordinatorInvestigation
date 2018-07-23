@@ -31,6 +31,19 @@ class MainTabBarFlowCoordinator {
     }
 }
 
-extension MainTabBarFlowCoordinator: HomeFlowCoordinatorDelegate {
-    
+extension MainTabBarFlowCoordinator: PlaybackRequestDelegate {
+    func playbackRequested(for entity: Entity) {
+        let playbackViewController = PlaybackViewController.instantiate()
+        playbackViewController.viewModel = PlaybackViewModel(entity: entity)
+        playbackViewController.delegate = self
+        presenter.present(playbackViewController, animated: true, completion: nil)
+    }
 }
+
+extension MainTabBarFlowCoordinator: DismissalDelegate {
+    func viewControllerDidRequestDismissal(_ viewController: UIViewController) {
+        presenter.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MainTabBarFlowCoordinator: PlaybackViewControllerDelegate, HomeFlowCoordinatorDelegate { }

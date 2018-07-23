@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-protocol HomeFlowCoordinatorDelegate: class {
-
+protocol HomeFlowCoordinatorDelegate: PlaybackRequestDelegate {
+    
 }
 
 class HomeFlowCoordinator {
@@ -49,5 +49,11 @@ extension HomeFlowCoordinator: CoverStoriesViewControllerDelegate {
 extension HomeFlowCoordinator: DetailsFlowCoordinatorDelegate {
     func detailsDidGetRemoved(flowCoordinator: DetailsFlowCoordinator) {
         detailsFlowCoordinator = nil
+    }
+}
+
+extension HomeFlowCoordinator: PlaybackRequestDelegate {
+    func playbackRequested(for entity: Entity) {
+        delegate?.playbackRequested(for: entity)
     }
 }

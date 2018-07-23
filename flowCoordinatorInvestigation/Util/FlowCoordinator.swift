@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
-// Probably a better name for this...
+// Probably a better name for thess...
 protocol DismissalDelegate: class {
     func viewControllerDidRequestDismissal(_ viewController: UIViewController)
+}
+
+protocol PlaybackRequestDelegate: class {
+    func playbackRequested(for entity: Entity)
 }

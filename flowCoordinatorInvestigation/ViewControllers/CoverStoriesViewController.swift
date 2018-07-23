@@ -29,7 +29,7 @@ class CoverStoriesViewModel {
     }
 }
 
-protocol CoverStoriesViewControllerDelegate: class {
+protocol CoverStoriesViewControllerDelegate: PlaybackRequestDelegate {
     func coverStorySelected(entity: Entity)
 }
 
@@ -79,6 +79,7 @@ extension CoverStoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CoverStoryTableViewCell.identifier, for: indexPath) as! CoverStoryTableViewCell
         cell.model = viewModel?.entities[indexPath.row]
+        cell.delegate = delegate
         return cell
     }
 }

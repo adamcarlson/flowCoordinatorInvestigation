@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appCoordinator: MainTabBarFlowCoordinator?
 
+    // TODO:
+    //  - AppFlowCoordinator
+    //  - SignIn
+    //  - Onboarding
+    //  - Search
+    //  - Playback to details
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
