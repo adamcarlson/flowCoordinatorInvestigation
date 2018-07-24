@@ -49,16 +49,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrq-Om-w43">
+                                <rect key="frame" x="0.0" y="301.5" width="375" height="365.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.12715472651617177" green="0.12715472651617177" blue="0.12715472651617177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="zrq-Om-w43" firstAttribute="leading" secondItem="uSx-QU-GeH" secondAttribute="leading" id="9uM-mX-cyp"/>
                             <constraint firstItem="hY0-MA-Otg" firstAttribute="top" secondItem="dyr-ef-wSf" secondAttribute="bottom" constant="20" id="BMF-Sf-JVs"/>
+                            <constraint firstItem="zrq-Om-w43" firstAttribute="top" secondItem="ExQ-2W-LOM" secondAttribute="bottom" constant="16" id="CVx-5d-8NA"/>
                             <constraint firstItem="hY0-MA-Otg" firstAttribute="trailing" secondItem="ExQ-2W-LOM" secondAttribute="trailing" id="DZc-2i-OBY"/>
                             <constraint firstItem="kvH-oF-KyZ" firstAttribute="trailing" secondItem="ExQ-2W-LOM" secondAttribute="trailing" constant="20" id="QKG-cz-tGg"/>
                             <constraint firstItem="ExQ-2W-LOM" firstAttribute="top" secondItem="hY0-MA-Otg" secondAttribute="bottom" constant="8" id="S1I-iy-ypu"/>
                             <constraint firstItem="hY0-MA-Otg" firstAttribute="leading" secondItem="ExQ-2W-LOM" secondAttribute="leading" id="Snm-nQ-Y9V"/>
+                            <constraint firstAttribute="trailing" secondItem="zrq-Om-w43" secondAttribute="trailing" id="W1t-WS-SwE"/>
                             <constraint firstItem="ExQ-2W-LOM" firstAttribute="leading" secondItem="kvH-oF-KyZ" secondAttribute="leading" constant="20" id="XZe-QZ-84d"/>
                             <constraint firstItem="dyr-ef-wSf" firstAttribute="top" secondItem="kvH-oF-KyZ" secondAttribute="top" id="a3J-Dp-tTg"/>
+                            <constraint firstAttribute="bottom" secondItem="zrq-Om-w43" secondAttribute="bottom" id="dzM-64-8yo"/>
                             <constraint firstItem="kvH-oF-KyZ" firstAttribute="trailing" secondItem="dyr-ef-wSf" secondAttribute="trailing" id="lAE-09-NWJ"/>
                             <constraint firstItem="dyr-ef-wSf" firstAttribute="leading" secondItem="kvH-oF-KyZ" secondAttribute="leading" id="rts-cI-M5O"/>
                         </constraints>
@@ -68,6 +76,7 @@
                         <outlet property="idLabel" destination="RGd-8B-Li9" id="Kqr-CI-Fxi"/>
                         <outlet property="nowPlayingLabel" destination="ExQ-2W-LOM" id="5Xx-5Y-pyB"/>
                         <outlet property="playbackScreen" destination="dyr-ef-wSf" id="ryv-ak-vCr"/>
+                        <outlet property="tableView" destination="zrq-Om-w43" id="LdG-a1-JIe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncL-FO-CrW" userLabel="First Responder" sceneMemberID="firstResponder"/>

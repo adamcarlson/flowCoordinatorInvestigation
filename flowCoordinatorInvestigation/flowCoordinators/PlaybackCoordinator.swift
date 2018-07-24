@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-class PlaybackCoordinator {
+class PlaybackCoordinator: FlowCoordinator, ShowDetailsDelegate {
 
     let presenter: UIViewController
 
     var playbackViewModel: PlaybackViewModel?
+
+    weak var delegate: ShowDetailsDelegate?
 
     init(presenter: UIViewController) {
         self.presenter = presenter
@@ -21,15 +23,21 @@ class PlaybackCoordinator {
 
     func start(with entity: Entity) {
         let playbackViewController = PlaybackViewController.instantiate()
-        playbackViewModel = PlaybackViewModel(entity: entity)
+        playbackViewModel = PlaybackViewModel(entity: entity, otherEntities: Entity.generateTestEntities())
         playbackViewController.viewModel = playbackViewModel
         playbackViewController.delegate = self
         presenter.present(playbackViewController, animated: true, completion: nil)
     }
 }
 
-extension PlaybackCoordinator: PlaybackViewControllerDelegate {
+extension PlaybackCoordinator: DismissalDelegate {
     func viewControllerDidRequestDismissal(_ viewController: UIViewController) {
         presenter.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PlaybackCoordinator: PlaybackRequestDelegate {
+    func playbackRequested(for entity: Entity) {
+        playbackViewModel?.model = entity
     }
 }

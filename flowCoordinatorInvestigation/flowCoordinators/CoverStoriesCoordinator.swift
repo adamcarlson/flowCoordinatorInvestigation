@@ -9,17 +9,13 @@
 import Foundation
 import UIKit
 
-protocol CoverStoriesCoordinatorDelegate: PlaybackRequestDelegate {
-    func showDetails(for entity: Entity)
-}
-
 class CoverStoriesCoordinator: FlowCoordinator {
 
     let presenter: UIViewController
 
     let viewModel: CoverStoriesViewModel
 
-    weak var delegate: CoverStoriesCoordinatorDelegate?
+    weak var delegate: (PlaybackRequestDelegate & ShowDetailsDelegate)?
 
     init(presenter: UIViewController) {
         self.presenter = presenter

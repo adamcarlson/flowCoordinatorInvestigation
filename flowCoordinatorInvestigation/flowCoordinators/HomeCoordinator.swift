@@ -9,17 +9,13 @@
 import Foundation
 import UIKit
 
-protocol HomeCoordinatorDelegate: PlaybackRequestDelegate {
-    
-}
-
 class HomeCoordinator: FlowCoordinator {
 
     let presenter: UINavigationController
     var coverStoriesCoordinator: CoverStoriesCoordinator?
     var detailsFlowCoordinators: [DetailsFlowCoordinator] = []
 
-    weak var delegate: HomeCoordinatorDelegate?
+    weak var delegate: PlaybackRequestDelegate?
 
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -32,7 +28,7 @@ class HomeCoordinator: FlowCoordinator {
     }
 }
 
-extension HomeCoordinator: CoverStoriesCoordinatorDelegate {
+extension HomeCoordinator: ShowDetailsDelegate {
     func showDetails(for entity: Entity) {
         let detailsFlowCoordinator = DetailsFlowCoordinator(presenter: presenter, entity: entity)
         detailsFlowCoordinators.append(detailsFlowCoordinator)

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K78-Qy-kPd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="Xvc-zj-xAY">
+            <objects>
+                <viewController id="K78-Qy-kPd" customClass="SearchViewController" customModule="flowCoordinatorInvestigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qR1-QM-p60">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="czn-lK-i7y">
+                                <rect key="frame" x="16" y="265.5" width="343" height="100.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="84"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VzX-I0-kqx" firstAttribute="trailing" secondItem="czn-lK-i7y" secondAttribute="trailing" constant="16" id="ET5-gE-sNo"/>
+                            <constraint firstItem="czn-lK-i7y" firstAttribute="centerY" secondItem="VzX-I0-kqx" secondAttribute="centerY" constant="-50" id="SUQ-1M-7ta"/>
+                            <constraint firstItem="czn-lK-i7y" firstAttribute="leading" secondItem="VzX-I0-kqx" secondAttribute="leading" constant="16" id="jMD-Iq-YxO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VzX-I0-kqx"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjV-gA-5EH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="156"/>
+        </scene>
+    </scenes>
+</document>

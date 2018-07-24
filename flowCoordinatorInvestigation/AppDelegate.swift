@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appCoordinator: ApplicationCoordinator?
 
     // TODO:
-    //  - AppFlowCoordinator
     //  - SignIn
     //  - Onboarding
     //  - Search

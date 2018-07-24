@@ -36,3 +36,15 @@ extension PlaybackRequestDelegate where Self: FlowCoordinator {
         }
     }
 }
+
+protocol ShowDetailsDelegate: class {
+    func showDetails(for entity: Entity)
+}
+
+extension ShowDetailsDelegate where Self: FlowCoordinator {
+    func showDetails(for entity: Entity) {
+        if let showDetailsDelegate = delegate as? ShowDetailsDelegate {
+            showDetailsDelegate.showDetails(for: entity)
+        }
+    }
+}

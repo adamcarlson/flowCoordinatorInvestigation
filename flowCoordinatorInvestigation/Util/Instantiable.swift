@@ -24,6 +24,7 @@ enum ViewControllers: String {
     case player = "PlaybackViewController"
     case options = "OptionsViewController"
     case coverStories = "CoverStoriesViewController"
+    case search = "SearchViewController"
 
     var storyboard: UIStoryboard {
         var name = self.rawValue

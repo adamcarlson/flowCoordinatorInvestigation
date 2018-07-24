@@ -13,26 +13,37 @@ class MainTabBarCoordinator: FlowCoordinator {
 
     let presenter: UITabBarController
 
-    var homeFlowCoordinator: HomeCoordinator?
+    var homeCoordinator: HomeCoordinator?
+    var searchCoordinator: SearchCoordinator?
     var playbackCoordinator: PlaybackCoordinator?
 
     init(presenter: UITabBarController) {
         self.presenter = presenter
 
         presenter.viewControllers = [
-            constructHome()
+            constructHome(),
+            constructSearch()
         ]
     }
 
     func start() {
-        homeFlowCoordinator?.start()
+        homeCoordinator?.start()
+        searchCoordinator?.start()
     }
 
     func constructHome() -> UIViewController {
         let navigationController = UINavigationController()
         navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
-        homeFlowCoordinator = HomeCoordinator(presenter: navigationController)
-        homeFlowCoordinator?.delegate = self
+        homeCoordinator = HomeCoordinator(presenter: navigationController)
+        homeCoordinator?.delegate = self
+        return navigationController
+    }
+
+    func constructSearch() -> UIViewController {
+        let navigationController = UINavigationController()
+        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        searchCoordinator = SearchCoordinator(presenter: navigationController)
+        searchCoordinator?.delegate = self
         return navigationController
     }
 }
@@ -40,6 +51,7 @@ class MainTabBarCoordinator: FlowCoordinator {
 extension MainTabBarCoordinator: PlaybackRequestDelegate {
     func playbackRequested(for entity: Entity) {
         playbackCoordinator = PlaybackCoordinator(presenter: presenter)
+        playbackCoordinator?.delegate = self
         playbackCoordinator?.start(with: entity)
     }
 }
@@ -50,4 +62,13 @@ extension MainTabBarCoordinator: DismissalDelegate {
     }
 }
 
-extension MainTabBarCoordinator: PlaybackViewControllerDelegate, HomeCoordinatorDelegate { }
+extension MainTabBarCoordinator: ShowDetailsDelegate {
+    func showDetails(for entity: Entity) {
+        homeCoordinator?.showDetails(for: entity)
+        presenter.selectedIndex = 0
+        if playbackCoordinator != nil {
+            presenter.dismiss(animated: true, completion: nil)
+            playbackCoordinator = nil
+        }
+    }
+}

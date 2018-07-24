@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 class PlaybackViewModel {
-    var model: Entity
+    var model: Entity {
+        didSet {
+            bind?()
+        }
+    }
+    let otherEntities: [Entity]
 
     var title: String {
         return model.name
@@ -24,13 +29,12 @@ class PlaybackViewModel {
         return model.color
     }
 
-    init(entity: Entity) {
+    var bind: (() -> Void)?
+
+    init(entity: Entity, otherEntities: [Entity]) {
         self.model = entity
+        self.otherEntities = otherEntities
     }
-}
-
-protocol PlaybackViewControllerDelegate: DismissalDelegate {
-
 }
 
 class PlaybackViewController: UIViewController, Instantiable {
@@ -41,8 +45,9 @@ class PlaybackViewController: UIViewController, Instantiable {
     @IBOutlet var playbackScreen: UIView!
     @IBOutlet var idLabel: UILabel!
     @IBOutlet var nowPlayingLabel: UILabel!
-
-    weak var delegate: PlaybackViewControllerDelegate?
+    @IBOutlet var tableView: UITableView!
+    
+    weak var delegate: (DismissalDelegate & PlaybackRequestDelegate & ShowDetailsDelegate)?
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -63,17 +68,33 @@ class PlaybackViewController: UIViewController, Instantiable {
         set { }
     }
 
-    var viewModel: PlaybackViewModel?
+    var viewModel: PlaybackViewModel? {
+        didSet {
+            viewModel?.bind = { [weak self] in
+                self?.setup()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleDismiss))
+        playbackScreen.addGestureRecognizer(panGesture)
+
+        let nib = UINib(nibName: "PlaybackTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: PlaybackTableViewCell.identifier)
+
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        setup()
+    }
+
+    func setup() {
         playbackScreen.backgroundColor = viewModel?.color
         idLabel.text = viewModel?.id
         nowPlayingLabel.text = viewModel?.title
-
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleDismiss))
-        playbackScreen.addGestureRecognizer(panGesture)
     }
 
     @objc final func handleDismiss(sender: UIPanGestureRecognizer) {
@@ -114,6 +135,29 @@ class PlaybackViewController: UIViewController, Instantiable {
     }
 }
 
+extension PlaybackViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.otherEntities.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlaybackTableViewCell.identifier, for: indexPath) as! PlaybackTableViewCell
+        cell.model = viewModel?.otherEntities[indexPath.row]
+        cell.delegate = delegate
+        return cell
+    }
+}
+
+extension PlaybackViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 116.0
+    }
+}
+
 extension PlaybackViewController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return SwipeDownToDismissAnimator()
@@ -123,7 +167,6 @@ extension PlaybackViewController: UIViewControllerTransitioningDelegate {
         return interactor.hasStarted ? interactor : nil
     }
 }
-
 
 private final class Interactor: UIPercentDrivenInteractiveTransition {
     var hasStarted = false
