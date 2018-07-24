@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // TODO:
     //  - SignIn
     //  - Onboarding
-    //  - Search
-    //  - Playback to details
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
