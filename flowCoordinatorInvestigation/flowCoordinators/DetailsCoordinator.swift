@@ -9,25 +9,28 @@
 import Foundation
 import UIKit
 
-protocol DetailsFlowCoordinatorDelegate: PlaybackRequestDelegate {
+protocol DetailsCoordinatorDelegate: PlaybackRequestDelegate {
     func detailsDidGetRemoved(flowCoordinator: DetailsFlowCoordinator)
 }
 
-class DetailsFlowCoordinator {
+class DetailsFlowCoordinator: FlowCoordinator {
 
-    let presenter: DetailsViewController
+    let presenter: UIViewController
 
-    weak var delegate: DetailsFlowCoordinatorDelegate?
+    let viewModel: DetailsViewModel
 
-    init(presenter: DetailsViewController) {
+    weak var delegate: DetailsCoordinatorDelegate?
+
+    init(presenter: UIViewController, entity: Entity) {
         self.presenter = presenter
+        viewModel = DetailsViewModel(model: entity)
     }
 
-    func initialize(with entity: Entity) {
-        // Should the flowCoordinator keep a reference to the viewModel?
-        let detailsViewModel = DetailsViewModel(model: entity)
-        presenter.viewModel = detailsViewModel
-        presenter.delegate = self
+    func start() {
+        let detailsViewController = DetailsViewController.instantiate()
+        detailsViewController.viewModel = viewModel
+        detailsViewController.delegate = self
+        presenter.show(detailsViewController, sender: self)
     }
 }
 
@@ -49,11 +52,5 @@ extension DetailsFlowCoordinator: DismissalDelegate {
         if viewController is OptionsViewController {
             presenter.dismiss(animated: true, completion: nil)
         }
-    }
-}
-
-extension DetailsFlowCoordinator: PlaybackRequestDelegate {
-    func playbackRequested(for entity: Entity) {
-        delegate?.playbackRequested(for: entity)
     }
 }

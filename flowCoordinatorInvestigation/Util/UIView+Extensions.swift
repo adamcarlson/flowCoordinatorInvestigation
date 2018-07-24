@@ -27,3 +27,11 @@ extension UIView {
         }
     }
 }
+
+extension UIViewController {
+    func addFullViewChild(child: UIViewController, constrainsToSafeArea: Bool = false) {
+        addChildViewController(child)
+        view.addFullViewSubView(child.view, constrainsToSafeArea: constrainsToSafeArea)
+        child.didMove(toParentViewController: self)
+    }
+}

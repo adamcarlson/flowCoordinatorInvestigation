@@ -9,11 +9,30 @@
 import Foundation
 import UIKit
 
-// Probably a better name for thess...
+protocol FlowCoordinator {
+    associatedtype Delegate = Any
+    var delegate: Delegate? { get }
+}
+
+extension FlowCoordinator {
+    var delegate: Delegate? {
+        return nil
+    }
+}
+
+// Probably a better name for these...
 protocol DismissalDelegate: class {
     func viewControllerDidRequestDismissal(_ viewController: UIViewController)
 }
 
 protocol PlaybackRequestDelegate: class {
     func playbackRequested(for entity: Entity)
+}
+
+extension PlaybackRequestDelegate where Self: FlowCoordinator {
+    func playbackRequested(for entity: Entity) {
+        if let playbackRequestDelegate = delegate as? PlaybackRequestDelegate {
+            playbackRequestDelegate.playbackRequested(for: entity)
+        }
+    }
 }

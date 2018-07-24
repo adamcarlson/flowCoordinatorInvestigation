@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appCoordinator: MainTabBarFlowCoordinator?
+    var appCoordinator: ApplicationCoordinator?
 
     // TODO:
     //  - AppFlowCoordinator
@@ -24,13 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let presenter = UITabBarController()
-        appCoordinator = MainTabBarFlowCoordinator(presenter: presenter)
-        appCoordinator?.initialize()
-
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = presenter
-        window?.makeKeyAndVisible()
+        appCoordinator = ApplicationCoordinator(window: window!)
+        appCoordinator?.start()
 
         return true
     }
