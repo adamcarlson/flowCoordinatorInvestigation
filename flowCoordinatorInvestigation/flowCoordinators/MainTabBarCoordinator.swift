@@ -19,14 +19,14 @@ class MainTabBarCoordinator: FlowCoordinator {
 
     init(presenter: UITabBarController) {
         self.presenter = presenter
+    }
 
+    func start() {
         presenter.viewControllers = [
             constructHome(),
             constructSearch()
         ]
-    }
 
-    func start() {
         homeCoordinator?.start()
         searchCoordinator?.start()
     }
@@ -53,12 +53,6 @@ extension MainTabBarCoordinator: PlaybackRequestDelegate {
         playbackCoordinator = PlaybackCoordinator(presenter: presenter)
         playbackCoordinator?.delegate = self
         playbackCoordinator?.start(with: entity)
-    }
-}
-
-extension MainTabBarCoordinator: DismissalDelegate {
-    func viewControllerDidRequestDismissal(_ viewController: UIViewController) {
-        presenter.dismiss(animated: true, completion: nil)
     }
 }
 
