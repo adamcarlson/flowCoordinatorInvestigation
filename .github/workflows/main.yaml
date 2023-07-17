@@ -1,0 +1,11 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-docc:
+    uses: adamcarlson/docc-action@main
+    with:
+      branch: ${{ github.event.inputs.branch }}
+      scheme: flowCoordinatorInvestigation
+      base_pages_url: https://adamcarlson.github.io/flowCoordinatorInvestigation/
