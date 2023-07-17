@@ -4,8 +4,10 @@ on:
 
 jobs:
   publish-docc:
-    uses: adamcarlson/docc-action@main
-    with:
-      branch: ${{ github.event.inputs.branch }}
-      scheme: flowCoordinatorInvestigation
-      base_pages_url: https://adamcarlson.github.io/flowCoordinatorInvestigation/
+    runs-on: self-hosted
+    steps:
+      - uses: adamcarlson/docc-action@main
+        with:
+          branch: ${{ github.event.inputs.branch }}
+          scheme: flowCoordinatorInvestigation
+          base_pages_url: https://adamcarlson.github.io/flowCoordinatorInvestigation/
